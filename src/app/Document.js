@@ -17,7 +17,7 @@ export default class Document extends React.Component {
 
     const page = await renderPage(App => props => (
       <JssProvider registry={sheetsRegistry} generateClassName={generateClassName}>
-        <Template>{sheet.collectStyles(<App {...props} />)}</Template>
+        {sheet.collectStyles(<Template><App {...props} /></Template>)}
       </JssProvider>
     ));
 
