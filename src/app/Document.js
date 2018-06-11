@@ -22,16 +22,16 @@ export default class Document extends React.Component {
     ));
 
     // styled-components
-    const styleTags = sheet.getStyleElement();
+    const styledComponentStyleTags = sheet.getStyleElement();
 
     // material-ui
-    const css = sheetsRegistry.toString();
+    const materialUICss = sheetsRegistry.toString();
 
-    return { assets, data, ...page, styleTags, css };
+    return { assets, data, ...page, styledComponentStyleTags, materialUICss };
   }
 
   render() {
-    const { helmet, assets, data, styleTags, css } = this.props;
+    const { helmet, assets, data, styledComponentStyleTags, materialUICss } = this.props;
     // get attributes from React Helmet
     const htmlAttrs = helmet.htmlAttributes.toComponent();
     const bodyAttrs = helmet.bodyAttributes.toComponent();
@@ -48,11 +48,11 @@ export default class Document extends React.Component {
 
           {/** here is where we put our Material UI styleTags... */}
           <style id="jss-server-side" type="text/css">
-            {css}
+            {materialUICss}
           </style>
 
           {/** here is where we put our Styled Components styleTags... */}
-          {styleTags}
+          {styledComponentStyleTags}
 
           {helmet.script.toComponent()}
         </head>
