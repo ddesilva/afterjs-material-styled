@@ -3,7 +3,7 @@ import { hydrate } from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { ensureReady, After } from '@jaredpalmer/after';
 import routes from './routes';
-import Template from './app/Template';
+import Template from './app/templates/Template';
 
 ensureReady(routes).then(data =>
   hydrate(

@@ -1,7 +1,7 @@
 import express from 'express';
 import { render } from '@jaredpalmer/after';
 import routes from './routes';
-import MyDocument from './app/Document';
+import MyDocument from './app/templates/Document';
 import helmet from 'helmet';
 
 const assets = require(process.env.RAZZLE_ASSETS_MANIFEST);
